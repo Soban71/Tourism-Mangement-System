@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        li{
+            list-style: none;
+        }
+        .active{
+            color: crimson;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        /*Navbar*/
+        nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0px 5px 0px #dedede;
+  position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+      
+
+        a{
+            text-decoration: none;
+        }
+        header{
+            width: 100vw;
+            height: 100vh;
+            display: table;
+    
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('naran background.jpg');
+            background-position: center top;
+            color: white;
+            background-size: cover;
+            background-position: bottom;
+            display: flex;
+            align-items: center;
+           justify-content: center;
+           
+        }
+        .header-container{
+            margin-bottom: 150px;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        .header-container h2{
+            font-size: 4vmin;
+        }
+        .line{
+            height: 4px;
+            width: 150px;
+            background-color: crimson;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .header-container h1{
+
+            font-size: 7vmin;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .ctn{
+              
+              display: inline-block;
+                      outline: none;
+                      cursor: pointer;
+                      font-size: 12px;
+                      line-height: 1;
+                      border-radius: 500px;
+                     /* transition-property: background-color,border-color,color,box-shadow,filter;*/
+                      transition-duration: .3s;
+                      border: 1px solid transparent;
+                      letter-spacing: 2px;
+                      min-width: 160px;
+                      text-transform: uppercase;
+                      white-space: normal;
+                      font-weight: 400;
+                      text-align: center;
+                      padding: 17px 22px;
+                      color: #fff;
+                      background-color: crimson;
+                      text-align: center;
+                      justify-content: center;
+                      height: 48px;
+                      margin-top: 20px;
+  }
+          
+  
+          .ctn:hover{
+              
+              background-color:crimson;
+                          transition: .3s;
+                      box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+                      color: slategrey;
+          }
+          
+         
+  
+          .ctnn{
+               
+              text-align: center;
+      padding: 10px 22px;
+      background-color: crimson;
+      color: white;
+      border-radius: 10px;
+      margin-top: 15px;
+      display: block;
+      max-width: 200px;
+      margin-left: 2px;
+      height: 40px;
+          }
+  
+          .ctnn:hover{
+           
+              background-color: rgb(47, 47, 54);
+               transition: .2s ease-in-out .2s;
+  
+          }
+          /*Places fot visit*/
+        section{
+            width: 80%;
+            margin: 80px auto;
+        }
+        .title{
+            text-align: center;
+            font-size: 3vmin;
+        }
+
+        .Row{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .Row .col img{
+            width: 80%;
+        }
+        .Row .col img:hover{
+          transition: transform 2s, filter .5s ease-in-out;
+  
+  transform: scale(2);
+  cursor: pointer;
+  border-radius: 10px;
+
+        }
+      .events .row{
+          margin: top 50px; 
+      }
+      h4{
+          font-size: 3vmin;
+          color: rgb(39, 35, 35);
+          margin: 15px 10px;
+      }
+
+      p{
+          color: rgb(73, 72, 72);
+          padding: 0px 40px;
+      }
+
+      .pkge{
+          width: 74%;
+          height: 60vh;
+          background-image: url(Naranpkge.jpg);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+      }
+      .pkge-content{
+          width: 50%;
+          padding: 30px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+      }
+      .pkge-content h1{
+          font-size: 4.9vmin;
+          margin: 10px;
+          color: rgb(238, 225, 225);
+          font-weight: bold;
+      
+         
+      }
+      
+      .pkge-content p{
+          color: steelblue;
+         margin-top: 20px;
+         margin-bottom: 20px;
+         text-align: center;
+          justify-content: center;
+          align-items: center;
+
+      }
+      .facilities{
+          display: flex;
+
+      }
+.facilities h1 {
+    margin: 12px 12px;
+text-align: center;
+    
+        margin: 14px;
+        padding: 14px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.facilities p{
+    padding: 4px;
+    
+}
+.facilities .image-gallery{
+   display: flex;
+   flex-wrap: wrap;
+   width: 70%;
+      height: 260px;
+}
+.image-gallery{
+    width: 270px;
+}
+.image-gallery img{
+    width: 230px;
+    
+}
+.image-gallery img{
+    width: 190px;
+    height: 25vh;
+    margin: 5px 20px;  
+}
+.image-gallery img:hover{
+
+transition: transform 2s, filter .5s ease-in-out;
+
+transform: scale(2);
+cursor: pointer;
+border-radius: 10px;
+
+
+}
+
+.footer
+{
+    width: 100%;
+    min-height: 200px;
+    padding: 20px 80px;
+    margin: 0;
+    background: rgb(87, 77, 97);
+    text-align: center;
+}
+
+.footer p{
+    color: whitesmoke;
+    margin: 20px 30px;
+}
+
+    
+       
+      @media only screen and(max-width:850px)
+
+      {
+          .navbar{
+              padding: 0;
+          }
+          .logo{
+              position: absolute;
+              top: 30px;
+              left: 30px;
+          }
+          .nav-link{
+              flex-direction: column;
+              width: 100%;
+              height: 100vh;
+              justify-content: center;
+          background: blueviolet;
+            }
+
+          .nav-link li{
+              margin: 30px auto;
+          }
+      
+        }
+    </style>
+ 
+    
+    
+    <title>Islamabad to Naran Kaghan </title>
+</head>
+<body>
+   
+    <nav class="fill">
+        <ul>
+          <li><a href="My Website.html">Home</a></li>
+          <li><a href="#events">places</a></li>
+          <li><a href="#pkge">Price</a></li>
+          <li><a href="#footer">About</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          
+        </ul>
+      </nav>
+    </section>
+ 
+     <header>
+        <div class="header-container">
+            <h2>Islamabad To Naran Kaghan</h2>
+        <div class="line"></div>
+        <h1>Let Explore The Pakistan</h1>
+        
+ 
+
+                <a href="" class="ctn"> Contact us</a>
+            </div>
+     </header>
+
+
+     <!--Places to visit-->
+     <section class="events" id="events">
+         <div class="title">
+             <h1>Places We Visit in Naran Kaghan</h1>
+             <div class="line"></div>
+         </div>
+<div class="Row">
+<div class="col">
+    <img src="Shogran valley.jpg" alt="">
+    <h4>Shogran</h4>
+    <p>At 30 kilometers distance from Balakot a hill station, Shogran is famous for its lush
+         greenery, pine forests and panoramic views. Shogran temperature remains about 18 
+         Degree 
+        Centigrade during summers. Pine Park Shogran offers best accommodation facilities
+        in Shogran.
+        </p>
+</div>
+
+
+<div class="col">
+    <img src="Siri Paye.jpg" alt="">
+    <h4>Siri Paye</h4>
+    <p>
+        Siri Paye is green carpeted land, covered under clouds and mesmerizing scenery  of snowy 
+        mountains. On your tour to Shogran, must visit Siri Paye Meadows and Siri Lake. 
+        Road condition from Shogran to Siri Paye is not too good but this place is worth seeing.
+    </p>
+</div>
+
+
+<div class="col">
+    <img src="saif ul malook.jpg" alt="">
+    <h4>Saif ul Malook Lake</h4>
+    <p>Alpine glaciers lake is located about 7 Kilometers from Naran Bazaar and is 10,000 ft fromsea level. Famous story of Prince 
+        of Persia associated with Saif ul Malook Lake and local guide used to tell fairy tales.
+        </p>    
+</div>
+<div class="col">
+    <img src="babusar top.jpg" alt="">
+    <h4>Babusar Top</h4>
+    <p>70 Kilometers from Naran a mountain pass at the north connecting Thak Nala with Chilas is also a famous destination while on your tour to Naran Kaghan Valley.
+        </p>
+</div>
+     </section>
+
+     <!--Package-->
+
+     <section class="pkge" id="pkge">
+        
+        <div class="pkge-content">
+            <h1>Package Per Person </h1>
+            <h1>32500 pkr</h1>
+            <div class="line"></div>
+
+                 <a href="" class="ctnn">Contact Us</a>
+                </div>
+     </section>
+
+
+
+
+     <section class="facilities" id="facilities">
+ 
+       <div class="col">
+       
+           <h1>Facilities and Recommandation</h1>
+           <div  class="line">
+
+           </div>
+       
+          <p>1) Luxury Air Conditioned Transport</p> 
+           <p>2) Jeeps for Desoi and other Track </p>
+           <p> 3) 2 Times Quality Meal (Breakfast + Dinner) </p> 
+            <p>4)  Refreshment(Coal Drinks)</p> 
+        <p>5) Basic First Aid </p>
+      <p>6) White River Rafting </p> 
+       <p>7) Services of Naran Kaghan Travel Trip Guide </p>
+      <p> 8) Night Stays at Luxry Hotel</p> 
+      <p> 9) Boat Ridinf</p> 
+       <a href="Booking.php" class="ctn"> Click here for Booking </a>
+
+       </div>
+
+       
+       
+           <div class="image-gallery">
+               <img src="ship.jpg" alt="">
+            <img src="Naran hotel.jpg" alt="">
+            <img src="white-water-rafting.jpg" alt="">
+            <img src="paragliding.jpg" alt="">
+            <img src="boat.jpg" alt="">
+            <img src="Siri Payeee.jpg" alt="">
+
+           </div>
+       </div>
+    </div>
+    
+     </section>
+
+     <section class="footer" id="footer">
+
+        <p>Disclaimer: SGS is Paksitans largest travel platform which helps travelers connect with 
+            tour operators and travel agents. Different services/products listed on this website are 
+            directly offered/sold by the respective agent SGS.pk only offers listing directory services. 
+           </p>
+             <p>Copyright © 2022 SGS.pk. All rights reserved.</p>
+     </section>
+
+    
+</body>
+</html>
