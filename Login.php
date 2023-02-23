@@ -17,7 +17,7 @@ $result=mysqli_fetch_array($res);
 $count = mysqli_num_rows($res);
 if ($count===1) {
 
-    header("location:My Website.html");
+    header("location:website/My Website.html");
 
 }
 else
@@ -66,8 +66,8 @@ else
               <input type="password" class="input" placeholder="Password" name="upassword">
             </div>
           </div>
-          <a href="Signup.php">Create an account?</a>
-          <a href="Adminlogin.php">Admin Login?</a>
+          <a href="./website/Signup.php">Create an account?</a>
+          <a href="./website/Adminlogin.php">Admin Login?</a>
           <input type="submit" class="btn" value="Login" name="submit">
           <button data-text="Awesome" class="button">
     <span class="actual-text">&nbsp;uiverse&nbsp;</span>
